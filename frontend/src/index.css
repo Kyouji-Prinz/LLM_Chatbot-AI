@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#fdfdfd] text-gray-900 font-sans antialiased selection:bg-brand-200 selection:text-brand-900;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-xl border border-white/50 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-2xl;
+  }
+  .input-field {
+    @apply w-full bg-white/50 backdrop-blur-md border border-gray-200/50 rounded-xl px-4 py-3 outline-none transition-all duration-300 focus:border-brand-300 focus:ring-4 focus:ring-brand-100 shadow-sm placeholder-gray-400;
+  }
+}
