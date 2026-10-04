@@ -52,7 +52,7 @@ export default function App() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('http://127.0.0.1:8000/api/chat', {
+      const response = await fetch('https://llm-chatbot-ai.onrender.com', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ session_id: sessionId, message: input }),
@@ -185,8 +185,8 @@ export default function App() {
                     </div>
                   )}
                   <div className={`max-w-[85%] rounded-2xl px-5 py-3.5 leading-relaxed shadow-sm transition-colors duration-300 backdrop-blur-md ${msg.role === 'user'
-                      ? 'bg-gray-900/90 dark:bg-brand-600/90 text-white rounded-br-sm'
-                      : 'bg-white/70 dark:bg-gray-800/70 border border-gray-100/50 dark:border-gray-700/50 text-gray-800 dark:text-gray-100 rounded-bl-sm prose prose-sm sm:prose-base dark:prose-invert prose-p:my-1 prose-headings:my-2 max-w-none'
+                    ? 'bg-gray-900/90 dark:bg-brand-600/90 text-white rounded-br-sm'
+                    : 'bg-white/70 dark:bg-gray-800/70 border border-gray-100/50 dark:border-gray-700/50 text-gray-800 dark:text-gray-100 rounded-bl-sm prose prose-sm sm:prose-base dark:prose-invert prose-p:my-1 prose-headings:my-2 max-w-none'
                     }`}>
                     {msg.role === 'user' ? (
                       msg.content
