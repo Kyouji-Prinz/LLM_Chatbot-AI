@@ -52,7 +52,7 @@ export default function App() {
     setIsLoading(true);
 
     try {
-      const response = await fetch('https://llm-chatbot-ai.onrender.com', {
+      const response = await fetch('https://llm-chatbot-ai.onrender.com/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ session_id: sessionId, message: input }),
@@ -92,7 +92,8 @@ export default function App() {
   const clearChat = async () => {
     setMessages([]);
     try {
-      await fetch(`http://127.0.0.1:8000/api/clear?session_id=${sessionId}`, { method: 'POST' });
+      await fetch(`https://llm-chatbot-ai.onrender.com/api/clear?session_id=${sessionId}`, { method: 'POST' });
+
     } catch (e) {
       console.error(e);
     }
